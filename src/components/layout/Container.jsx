@@ -1,7 +1,8 @@
-import React from 'react'
 
 const Container = (props) => {
-
+   //** children es una palabra reservada */
+   //** hace referencia al "contenido" del padre */
+   //** ademas este comp. recibe un prop llamado mensaje */
    const {children, mensaje} = props
 
    return (
@@ -18,3 +19,4 @@ const Container = (props) => {
 }
 
 export default Container
+
