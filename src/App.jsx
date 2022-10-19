@@ -2,41 +2,70 @@ import { useState, Fragment } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Saludo from './components/layout/Saludo'
-import Container from './components/layout/Container'
-import {validaciones} from './auxs/utils'
 
+import { diccionario } from './auxs/library'
+
+import Container from './components/layout/Container'
 
 function App() {
 
-  const { alerta } = validaciones
+  const saludar = function() { alert("saluando") }
 
-  const [count, setCount] = useState(0)
+  const saludarDos = function(mensaje) { alert(mensaje) }
 
-  //** funcion alerta */
-  //const alerta = (mensaje = "algo") => alert("mensaje")
+  /* estas funciones HACEN uso del diccionario */
+  const esNulo = () => {
+    const resultado = diccionario["nullish"]([1,100,0])
+    console.log(resultado)
+  } 
+
+  const esMenorA100 = () => {
+    const resultado = diccionario['menorA100'](105)
+    console.log("imprime si es V o F ", resultado)
+  }
   
-  
-
   return (
-    <>
+      <>
+        {/* uso de children */}
+        <Container mensaje="este componente tiene children">
+          <p>mensaje 1</p>
+          <p>mensaje 2</p>
+          <p>mensaje 3</p>
+          <p>mensaje 4</p>
+        </Container>
 
-      <Container mensaje="este componente tiene children">
+        {/* estas son las diferentes formas de ejecutar codigo de funciones ⬇ */}
 
-        <p>asaluasdasd</p>
-        <p>asaluasdasd</p>
-        <p>asaluasdasd</p>
-        <p>asaluasdasd</p>
+        <button onClick={saludar}>
+          hola 1
+        </button>
 
-      </Container>
+        <button onClick={()=>saludarDos("hola a todos")}>
+          hola 2
+        </button> 
 
-      <Saludo texto={"saludo inicial"}/>
+        <button onClick={esNulo}>
+          es nulo? 
+        </button>
 
-      <Saludo />
+        <button onClick={esMenorA100}>
+          menor a 100 
+        </button>
+        
+        {/* funciones que SI reciben callbacks ⬇ */}
+    
+        {/* podemos usar el diccionario directamente en el boton */}
+        <button 
+          onClick={()=> {
+            const resultado = diccionario['menorA100'](80)
+            console.log("imprime si es V o F ", resultado)
+          }
+        }>
+          menor a 100 *
+        </button>
 
-      <button onClick={()=>alerta("hacer algo")}>
-        hacer algo
-      </button>
-    </>
+
+      </>
   )
 }
 
