@@ -4,8 +4,7 @@
 // Esas funciones, como todas pueden o no recibir parámetros.
 // El codigo que ejecuta retorna una valor.
 export const diccionario = {
-    
-    'nullish' : (arreglo) => { //nullish retorna V o F
+    nullish : (arreglo) => { //nullish retorna V o F
         const nuloVacio = arreglo.some(item=>
             item === null || 
             item === "" || 
@@ -15,7 +14,7 @@ export const diccionario = {
         if(nuloVacio)console.info('si nuloVacio es V entonces el array tiene elementos nulos o vacios', nuloVacio)
         return nuloVacio
     },
-    'menorA100': (numero) => { //retorna V o F de acuerdo al numero
+    menorA100: (numero) => { //retorna V o F de acuerdo al numero
         /* if(numero < 100){
             return true
         }else{
@@ -23,7 +22,7 @@ export const diccionario = {
         } */
         return numero < 100 ? true : false
     }
-
+    
 }
 
 // Trabajo Practico A: agregar propiedades al diccionario que consista en hacer fetch a 

@@ -64,7 +64,6 @@ function App() {
           menor a 100 *
         </button>
 
-
       </>
   )
 }
