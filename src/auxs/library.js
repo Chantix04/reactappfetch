@@ -5,24 +5,21 @@
 // El codigo que ejecuta retorna una valor.
 export const diccionario = {
     nullish : (arreglo) => { //nullish retorna V o F
+        
         const nuloVacio = arreglo.some(item=>
             item === null || 
             item === "" || 
             item === 0 || 
             item.length === 0
             ) 
-        if(nuloVacio)console.info('si nuloVacio es V entonces el array tiene elementos nulos o vacios', nuloVacio)
+        
+            if(nuloVacio)console.info('si nuloVacio es V existen elementos nulos o vacios', nuloVacio)
+
         return nuloVacio
     },
-    menorA100: (numero) => { //retorna V o F de acuerdo al numero
-        /* if(numero < 100){
-            return true
-        }else{
-            return false
-        } */
-        return numero < 100 ? true : false
-    }
-    
+    menorA100: (numero) => numero < 100 ? true : false
+    ,
+    "Convertir a Minúsculas": (text) => text.toLowerCase() 
 }
 
 // Trabajo Practico A: agregar propiedades al diccionario que consista en hacer fetch a 
