@@ -15,12 +15,17 @@ function App() {
 
   /* estas funciones HACEN uso del diccionario */
   const esNulo = () => {
-    const resultado = diccionario["nullish"]([1,100,0])
+    const resultado = diccionario.nullish([1,100,0])
     console.log(resultado)
   } 
 
+  const aminusculas = () => {
+    const resultado = diccionario["Convertir a Minúsculas"]("ESTE TEXTO PASA A MINISCULAS")
+    console.log(resultado)
+  }
+
   const esMenorA100 = () => {
-    const resultado = diccionario['menorA100'](105)
+    const resultado = diccionario.menorA100(105)
     console.log("imprime si es V o F ", resultado)
   }
   
@@ -51,13 +56,17 @@ function App() {
         <button onClick={esMenorA100}>
           menor a 100 
         </button>
+
+        <button onClick={aminusculas}>
+          a minusculas
+        </button>
         
         {/* funciones que SI reciben callbacks ⬇ */}
     
         {/* podemos usar el diccionario directamente en el boton */}
         <button 
           onClick={()=> {
-            const resultado = diccionario['menorA100'](80)
+            const resultado = diccionario.menorA100(80)
             console.log("imprime si es V o F ", resultado)
           }
         }>
