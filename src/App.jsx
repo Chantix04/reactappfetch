@@ -2,6 +2,7 @@ import { useState, Fragment } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
 import Saludo from './components/layout/Saludo'
+import { getUser } from './auxs/library'
 
 import { diccionario } from './auxs/library'
 
@@ -29,6 +30,11 @@ function App() {
     console.log("imprime si es V o F ", resultado)
   }
   
+  const usuariosGet = async () =>{
+    const result= await getUser()
+    console.log(result)
+  }
+
   return (
       <>
         {/* uso de children */}
@@ -41,8 +47,8 @@ function App() {
 
         {/* estas son las diferentes formas de ejecutar codigo de funciones ⬇ */}
 
-        <button onClick={saludar}>
-          hola 1
+        <button onClick={usuariosGet}>
+          get users 
         </button>
 
         <button onClick={()=>saludarDos("hola a todos")}>

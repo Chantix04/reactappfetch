@@ -22,6 +22,18 @@ export const diccionario = {
     "Convertir a Minúsculas": (text) => text.toLowerCase() 
 }
 
+export const getUser = async ()=>{
+    try {
+        const resp = await fetch('http://localhost:4000/users')
+        const resjson = await resp.json()
+
+        console.log(resjson)
+
+    } catch (error) {
+        console.log('Hubo un problema', error)
+    }
+}
+
 // Trabajo Practico A: agregar propiedades al diccionario que consista en hacer fetch a 
 // SU API REST EJ. traer los datos de un usuario.
 
